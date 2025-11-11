@@ -13,10 +13,10 @@ public class WebConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:30082"));
+        configuration.setAllowedOrigins(List.of("http://localhost:30082")); // React app
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowCredentials(true);
+        configuration.setAllowCredentials(true); // only if using cookies/session
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
